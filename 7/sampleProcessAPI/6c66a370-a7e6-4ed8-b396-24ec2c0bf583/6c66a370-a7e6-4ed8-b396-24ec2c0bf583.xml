@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>6c66a370-a7e6-4ed8-b396-24ec2c0bf583</Id>
+  <Type>process</Type>
+  <Name>sampleProcessAPI</Name>
+  <Version>1</Version>
+  <FolderId name="Training-madesh-varma/SandBox 02/sampleAPIfolder">
+  6616469</FolderId>
+  <AccountId>trainingmadeshvarma-K5SXST</AccountId>
+  <Properties>
+    <Property>
+      <Name>startshape-action-type</Name>
+      <Value>Listen</Value>
+    </Property>
+    <Property>
+      <Name>startshape-type</Name>
+      <Value>CONNECTOR</Value>
+    </Property>
+    <Property>
+      <Name>startshape-connector-type</Name>
+      <Value>wss</Value>
+    </Property>
+    <Property>
+      <Name>overrides-enabled</Name>
+      <Value>false</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="94ac5453-782a-4558-89f3-46852d18e481"
+    refId="shape1.operation" name="WSS_GET_OPN" />
+  </References>
+  <Description />
+  <Object>
+    <process allowSimultaneous="true" enableUserLog="false"
+    updateRunDates="false" processLogOnErrorOnly="false"
+    workload="general" purgeDataImmediately="false">
+      <shapes>
+        <shape name="shape1" userlabel="" image="start" x="96.0"
+        y="94.0" shapetype="start">
+          <configuration>
+            <connectoraction operationId="94ac5453-782a-4558-89f3-46852d18e481"
+            actionType="Listen" connectorType="wss"
+            hideSettings="true" allowDynamicCredentials="NONE">
+              <parameters />
+              <dynamicProperties />
+            </connectoraction>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape1.dragpoint1" toShape="shape2"
+            x="464.0" y="104.0" />
+          </dragpoints>
+        </shape>
+        <shape name="shape2" userlabel="" image="message_icon"
+        x="480.0" y="96.0" shapetype="message">
+          <configuration>
+            <message combined="false">
+              <msgTxt>req was successful.</msgTxt>
+              <msgParameters />
+            </message>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape2.dragpoint1" toShape="shape3"
+            x="608.0" y="104.0" />
+          </dragpoints>
+        </shape>
+        <shape name="shape3" image="returndocuments_icon" x="624.0"
+        y="96.0" shapetype="returndocuments">
+          <configuration>
+            <returndocuments />
+          </configuration>
+          <dragpoints />
+        </shape>
+      </shapes>
+    </process>
+  </Object>
+</Component>
